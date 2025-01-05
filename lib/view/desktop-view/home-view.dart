@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webproject/view/mobile-view/mobilehomeview.dart';
 
 class HomeViewDesktop extends StatefulWidget {
   const HomeViewDesktop({super.key});
@@ -11,8 +12,34 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: Colors.brown),//for chaning background color
+                currentAccountPicture: CircleAvatar(),
+                accountName: Text('Areeba Iqbal'),
+                accountEmail: Text('areeba.seo05@gmail.com'),),
+            ListTile(
+              onTap: (){
+                Navigator.pop(context);
+              },
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+            ),
+            ListTile(
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeViewMobile()));// for page nav
+              },
+              leading: Icon(Icons.settings),
+              title: Text('Setting'),
+            )
+          ],
+        ),
+      ),
     appBar:  AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
         actions: [
           Text('Home'),
           Text('About Me'),
