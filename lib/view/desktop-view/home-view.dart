@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webproject/view/mobile-view/mobilehomeview.dart';
 
 class HomeViewDesktop extends StatefulWidget {
@@ -51,9 +52,21 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
           children: [
             Container(
             height: double.infinity, width:  double.infinity, color: Colors.lightGreen,
-                   child: Center(
-             child: Text('Desktop',style:TextStyle(fontSize: 30,
-                   fontWeight: FontWeight.w700,color: Colors.black,),),
+                   child: Row(
+                     children: [
+                       Container(
+                         child:IconButton(onPressed: () async{
+                           final whatsappUrl='https://wa.me/+92';
+                           await launchUrl(Uri.parse(whatsappUrl));
+                         }, icon: Icon(Icons.mail)),
+                       ),
+                          Container(
+                           child: Center(child: Text('Desktop',style:TextStyle(fontSize: 30,
+                           fontWeight: FontWeight.w700,color: Colors.black,),),
+                           ),
+
+                       ),
+                     ],
                    ),
 
                   ),
