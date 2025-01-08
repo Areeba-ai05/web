@@ -60,12 +60,9 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
                            await launchUrl(Uri.parse(whatsappUrl));
                          }, icon: Icon(Icons.mail)),
                        ),
-                          Container(
-                           child: Center(child: Text('Desktop',style:TextStyle(fontSize: 30,
-                           fontWeight: FontWeight.w700,color: Colors.black,),),
-                           ),
-
-                       ),
+                          Center(child: Text('Desktop',style:TextStyle(fontSize: 30,
+                          fontWeight: FontWeight.w700,color: Colors.black,),),
+                          ),
                      ],
                    ),
 
