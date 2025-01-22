@@ -12,6 +12,7 @@ class HomeViewDesktop extends StatefulWidget {
 class _HomeViewDesktopState extends State<HomeViewDesktop> {
   @override
   Widget build(BuildContext context) {
+    double height=MediaQuery.of(context).size.height;
     return Scaffold(
       drawer: Drawer(
         child: ListView(
@@ -51,7 +52,8 @@ class _HomeViewDesktopState extends State<HomeViewDesktop> {
         body:Row(
           children: [
             Container(
-            height: double.infinity, width:  double.infinity, color: Colors.lightGreen,
+            height: height*0.9,//double.infinity,
+              width:  double.infinity, color: Colors.lightGreen,
                    child: Row(
                      children: [
                        IconButton(onPressed: () async{
